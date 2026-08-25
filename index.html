@@ -182,6 +182,7 @@
   <div id="footer-container"></div>
 
   
+
   <!-- JavaScript 邏輯 (包含組件載入與事件處理) -->
   <script>
     // 載入外部 HTML 元件 (header & footer)
@@ -263,7 +264,7 @@
       // Get the ID from the clicked element
       let  pageUrl = '';
       if (typeof event.target.id !== 'undefined')  {
-
+        console.log('targetId:',event.target.id);
         pageUrl=event.target.id.replace('load-','');
         console.log('pageUrl:',pageUrl);
         
@@ -494,6 +495,7 @@
         });
 
         btn.classList.add('hidden');
+        console.log("發送送出:");
         if (successMsg) successMsg.classList.remove('hidden');
         showToast('諮詢表單已成功送出！', 'success');
       } catch (err) {
