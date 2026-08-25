@@ -261,26 +261,24 @@
       // Get the ID from the clicked element
       let  pageUrl = '';
       if (typeof event.target.id !== 'undefined')  {
-        pageUrl=event.target.id;
-        alert(pageUrl.replace('load-',''));
-        alert(`${pageUrl}.html`);
+        pageUrl=event.target.id.replace('load-','');
 
-      // 3. 使用 Fetch API 非同步讀取同資料夾底下的 services.html
-      fetch(`${pageUrl}.html`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('網頁載入失敗');
-            }
-            return response.text(); // 將檔案內容轉為文字
-        })
-        .then(htmlData => {
-            // 4. 將讀取到的 HTML 內容塞進 <main> 標籤中
-            mainContent.innerHTML = htmlData;
-        })
-        .catch(error => {
-            console.error('發生錯誤:', error);
-            mainContent.innerHTML = '<p>內容載入失敗，請稍後再試。</p>';
-        });
+        // 3. 使用 Fetch API 非同步讀取同資料夾底下的 services.html
+        fetch(`${pageUrl}.html`)
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('網頁載入失敗');
+              }
+              return response.text(); // 將檔案內容轉為文字
+          })
+          .then(htmlData => {
+              // 4. 將讀取到的 HTML 內容塞進 <main> 標籤中
+              mainContent.innerHTML = htmlData;
+          })
+          .catch(error => {
+              console.error('發生錯誤:', error);
+              mainContent.innerHTML = '<p>內容載入失敗，請稍後再試。</p>';
+          });
 
       }else {
          console.error('發生錯誤:找不到pageUrl',event.target.id);
