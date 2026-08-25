@@ -11,7 +11,7 @@
   <meta name="author" content="曜昕企業管理顧問有限公司 YAO HSIN BUSINESS MANAGEMENT CONSULTING CO., LTD.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#061322">
- <!--  <link rel="canonical" href="https://yaobiz.net/"> -->
+  <link rel="canonical" href="https://yaobiz.net/">
 
   <!-- Open Graph 社群標籤 -->
   <meta property="og:locale" content="zh_TW">
@@ -264,7 +264,6 @@
         pageUrl=event.target.dataset.id;
         alert(pageUrl.replace('load-',''));
         alert(`${pageUrl}.html`);
-      }else  alert(event.target.dataset.id);
 
       // 3. 使用 Fetch API 非同步讀取同資料夾底下的 services.html
       fetch(`${pageUrl}.html`)
@@ -282,6 +281,13 @@
             console.error('發生錯誤:', error);
             mainContent.innerHTML = '<p>內容載入失敗，請稍後再試。</p>';
         });
+
+      }else {
+         console.error('發生錯誤:找不到pageUrl');
+         alert(event.target.dataset.id);
+      } 
+
+     
     }
    
     // 互動式痛點資料
