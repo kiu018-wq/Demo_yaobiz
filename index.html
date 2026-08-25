@@ -11,7 +11,7 @@
   <meta name="author" content="曜昕企業管理顧問有限公司 YAO HSIN BUSINESS MANAGEMENT CONSULTING CO., LTD.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#061322">
-  <!--  <link rel="canonical" href="https://yaobiz.net/"> -->
+ <!--  <link rel="canonical" href="https://yaobiz.net/"> -->
 
   <!-- Open Graph 社群標籤 -->
   <meta property="og:locale" content="zh_TW">
@@ -262,12 +262,12 @@
       const pageUrl = '';
       if (typeof event.target.dataset.id !== 'undefined')  {
         pageUrl=event.target.dataset.id;
-        alert(pgname.replace('load-',''));
-        alert(`${pagename}.html`);
+        alert(pageUrl.replace('load-',''));
+        alert(`${pageUrl}.html`);
       }else  alert(event.target.dataset.id);
-      
+
       // 3. 使用 Fetch API 非同步讀取同資料夾底下的 services.html
-      fetch(`${pgname}.html`)
+      fetch(`${pageUrl}.html`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('網頁載入失敗');
