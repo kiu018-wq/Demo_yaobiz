@@ -1,0 +1,310 @@
+
+  <!-- FAQ Section (完整 20 題展現) -->
+  <section id="section-faq" class="py-20 sm:py-24 bg-brand-800/40 border-t border-slate-800 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+        <span class="text-amber-400 font-mono text-xs tracking-wider uppercase px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 inline-block font-semibold">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-normal">
+          常見問題 FAQ（共 20 題）
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          點擊下方問題可展開完整詳細解答，或透過分類切換閱讀：
+        </p>
+      </div>
+
+      <!-- FAQ 分類頁籤 -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10" id="faq-category-tabs">
+        <button onclick="filterFaqCategory('all')" id="faq-tab-all" class="faq-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-amber-500 text-slate-950 shadow-md">全部問題 (20)</button>
+        <button onclick="filterFaqCategory('about')" id="faq-tab-about" class="faq-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800">關於曜昕 (Q1-Q4)</button>
+        <button onclick="filterFaqCategory('market')" id="faq-tab-market" class="faq-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800">商業開發與政府標案 (Q5-Q9)</button>
+        <button onclick="filterFaqCategory('product')" id="faq-tab-product" class="faq-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800">產品設計與 MVP (Q10-Q12)</button>
+        <button onclick="filterFaqCategory('gov')" id="faq-tab-gov" class="faq-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800">政府補助申請 (Q13-Q18)</button>
+        <button onclick="filterFaqCategory('contact')" id="faq-tab-contact" class="faq-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800">合作與接洽 (Q19-Q20)</button>
+      </div>
+
+      <!-- 20 題真實 HTML DOM 卡片列表 (預設展開) -->
+      <div class="space-y-4" id="faq-accordion-container">
+        
+        <!-- Q1 -->
+        <div class="faq-card faq-cat-about glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(1)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q1.</span>
+              <span>曜昕企業管理顧問是做什麼的？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-1" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-1" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            曜昕企業管理顧問有限公司提供三項核心服務：商業開發顧問（含政府標案開發）、第二曲線產品設計，以及政府補助申請陪跑。主要是協助資源有限的中小企業從既有能力與資源出發，找到可快速驗證的切入點，或協助中小企業找到可運用的外部資源。
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-card faq-cat-about glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(2)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q2.</span>
+              <span>曜昕的顧問有什麼背景？可信嗎？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-2" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-2" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            創辦人擁有近 20 年資訊軟體業資歷，歷練橫跨系統分析師、專案經理、業務開發、產品企劃到部門主管職務，服務對象涵蓋金融證券、國際品牌、休閒業、零售業與政府機關，並持有 PMP（Project Management Professional）專案管理證照。
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-card faq-cat-about glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(3)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q3.</span>
+              <span>找小型顧問，跟找大型顧問公司比起來有什麼優勢？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-3" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-3" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            大型顧問公司賣的是團隊陣容與標準化方法論，實際執行常由資淺顧問負責；曜昕反其道而行，強調執行案件的顧問從頭到尾親自服務，即使有其它外部領域顧問參與，溝通上也不需要層層轉達，反應速度與判斷精準度更高。
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-card faq-cat-about glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(4)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q4.</span>
+              <span>曜昕服務過哪些類型的企業或機關？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-4" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-4" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            服務經歷涵蓋金融證券業、國際品牌、旅宿零售業與政府機關，橫跨甲方與乙方雙重視角，因此能同時理解企業內部決策邏輯與外部合作夥伴的實際需求。
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-card faq-cat-market glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(5)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q5.</span>
+              <span>曜昕的商業開發顧問服務包含哪些項目？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-5" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-5" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            包含政府標案開發、政府市場策略規劃、生態圈夥伴開發、異業合作對接，以及新市場／新通路探索，協助企業從既有產品與能力出發找到新的銷售與合作機會。
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="faq-card faq-cat-market glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(6)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q6.</span>
+              <span>為什麼中小企業應該投入政府標案市場？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-6" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-6" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            政府市場採購預算每年固定釋出、抗景氣波動，是穩定的第二營收曲線；企業可憑專業與策略競標，不需要高額行銷廣告費用；拿下標案實績後，也能大幅提升企業的品牌信任度。
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="faq-card faq-cat-market glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(7)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q7.</span>
+              <span>曜昕的政府標案開發服務具體怎麼進行？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-7" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-7" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            分為八個步驟：選案策略（盤點優勢、評估勝率）、RFP 解析（拆解招標文件與承辦隱性需求）、評選拆解（對齊評委配分表設計高分架構）、承辦溝通、提案架構設計、投標提醒（避開行政失誤）、簡報建議，以及答詢預警（預判評審提問並演練 QA）。
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="faq-card faq-cat-market glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(8)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q8.</span>
+              <span>什麼樣的企業適合投入政府標案市場？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-8" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-8" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            三種情境最適合：已有成熟產品／服務、希望跨入政府市場開闢第二曲線；第一次投入政府標案不知道從何開始；希望把攻案能力留在公司內部、不想長期依賴外部代寫公司。
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="faq-card faq-cat-market glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(9)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q9.</span>
+              <span>找顧問協助政府標案開發，跟直接找代寫公司差在哪？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-9" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-9" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            代寫公司通常只交付一份文件，能力不會留在企業內部；曜昕的做法是陪同企業團隊走過完整流程，把選案判斷、標書架構邏輯這些攻案能力留在公司內部，讓企業未來能自主投標。
+          </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="faq-card faq-cat-product glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(10)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q10.</span>
+              <span>什麼是第二曲線產品？為什麼中小企業需要它？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-10" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-10" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            第二曲線產品是指企業運用既有的資源、技術或客群基礎，重新設計出的新產品或服務。當主力產品成長趨緩時，第二曲線能提供新的營收來源，且開發成本通常低於從零開始的全新產品線。
+          </div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="faq-card faq-cat-product glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(11)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q11.</span>
+              <span>MVP 市場驗證是什麼？跟直接量產有什麼差別？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-11" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-11" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            MVP（最小可行性產品）是用最低成本打造可實際投入市場測試的產品雛形，先取得真實客戶反饋與購買數據，再決定是否擴大投入，能大幅降低方向錯誤導致的資源浪費風險。
+          </div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="faq-card faq-cat-product glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(12)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q12.</span>
+              <span>曜昕的產品設計顧問服務包含哪些項目？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-12" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-12" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            從產品定位、規格、定價到銷售情境，重新整理企業現有資源，設計新的產品與服務可能，包含新產品發想、產品定位、服務設計、第二產品曲線規劃與 MVP 市場測試。
+          </div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="faq-card faq-cat-gov glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(13)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q13.</span>
+              <span>政府補助案找代寫要注意什麼？找代寫有風險嗎？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-13" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-13" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            最大的風險不是寫不寫得過，而是過了之後執行不下去。許多代寫寫手只負責把計畫書寫到符合審查格式、順利取得補助，但如果對企業實際的營運狀況、人力配置與財務結構不夠了解，等到專案真正執行、需要核銷時，常常會出現 KPI 訂得不切實際、預算科目編列與實際支出對不上、人事分工跟計畫書寫的不一致等狀況，最後反而讓企業自己承擔核銷失敗、扣款甚至補助收回的風險。曜昕的做法不同：從這個專案未來要怎麼被執行的角度出發，先理解企業真實的資源與能力，再回頭設計提案內容，確保計畫書裡承諾的每一項 KPI 與預算配置，都是企業實際做得到、核銷得過的。
+          </div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="faq-card faq-cat-gov glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(14)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q14.</span>
+              <span>政府補助有哪些類型？企業該怎麼選？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-14" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-14" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            政府補助分為中央型（如 SBIR、SIIR）與地方型（各縣市的 SBIR、SITI）兩大類，企業須依自身發展階段與痛點，選擇對應的資源櫃台，才能提高申請成功率。
+          </div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="faq-card faq-cat-gov glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(15)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q15.</span>
+              <span>政府補助企畫書最重要的核心是什麼？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-15" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-15" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            企畫書不是夢想說明書，而是策略說服書，必須具備明確的解決方案、清楚的時程規劃，以及可量化的 Smart KPI 查核指標。評審審查的核心是評估團隊執行力、方案可行性與營運穩定度。
+          </div>
+        </div>
+
+        <!-- Q16 -->
+        <div class="faq-card faq-cat-gov glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(16)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q16.</span>
+              <span>政府補助的預算編列有什麼規則？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-16" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-16" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            政府補助款與企業自籌款通常採 1:1 對等比例，人事費與委外費編列須符合比例限制，確保財務科目合理性，避免因預算結構不合規而被扣分或退件。
+          </div>
+        </div>
+
+        <!-- Q17 -->
+        <div class="faq-card faq-cat-gov glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(17)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q17.</span>
+              <span>拿到補助之後核銷會很麻煩嗎？需要注意什麼？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-17" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-17" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            補助款通常採分階段給付，核銷時需嚴格核對專案人員的勞健保投保紀錄、所得憑證與合規三聯式發票。全流程做好合規準備，能大幅降低後續稽核扣款的風險，這也是陪跑服務會協助把關的環節。
+          </div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="faq-card faq-cat-gov glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(18)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q18.</span>
+              <span>曜昕的政府補助申請陪跑服務包含哪些項目？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-18" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-18" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            從補助方向諮詢、計畫架構梳理、商業模式整理、預算與 KPI 規劃，到計畫書撰寫與經費核銷全程輔導，陪伴企業將想法轉換為符合審查規範的具體計畫。
+          </div>
+        </div>
+
+        <!-- Q19 -->
+        <div class="faq-card faq-cat-contact glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(19)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q19.</span>
+              <span>跟曜昕合作大概需要多久時間？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-19" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-19" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            依服務類型與企業現況而異，市場開發與產品設計著重快速驗證，通常會先設定一個短週期的驗證目標；政府補助申請則依申請期程規劃陪跑時間。
+          </div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="faq-card faq-cat-contact glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaqAccordion(20)" class="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 bg-slate-900/60 hover:bg-slate-800/80 transition-colors">
+            <h3 class="text-base sm:text-lg font-bold text-amber-400 flex items-start gap-2.5">
+              <span class="font-mono shrink-0">Q20.</span>
+              <span>如何開始跟曜昕接洽？</span>
+            </h3>
+            <i data-lucide="chevron-down" id="faq-icon-20" class="w-5 h-5 text-amber-400 shrink-0 transition-transform duration-300" style="transform: rotate(180deg);"></i>
+          </button>
+          <div id="faq-ans-20" class="p-5 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800 bg-slate-950/40" style="display: block;">
+            可透過官網的免費諮詢單留下企業資訊與需求，曜昕將主動與您聯繫，初步了解狀況並討論可能的合作方向。
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>

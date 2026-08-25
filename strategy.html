@@ -1,0 +1,126 @@
+<!-- 02｜ 成長問題不需要一次解決全部 -->
+  <section id="section-02" class="py-20 sm:py-24 bg-brand-800/40 border-y border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
+        <span class="text-amber-400 font-mono text-xs tracking-wider uppercase px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 inline-block font-semibold">STRATEGY & CUTTING POINT</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-normal leading-snug">
+          成長問題，<span class="text-amber-400">不需要一次解決全部</span>
+        </h2>
+        <p class="text-slate-300 leading-relaxed text-sm sm:text-base font-normal max-w-2xl mx-auto">
+          企業想要轉型，想要找到第二營收曲線，通常不會一個專案就能達成目標。曜昕會先找出一個可以開始的切入點，再從實際執行中逐步驗證。
+        </p>
+      </div>
+
+      <!-- Process Workflow Flowchart -->
+      <div class="pb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative">
+          <div class="glass-card p-6 rounded-2xl border-slate-800 text-center flex flex-col items-center justify-between space-y-3 relative group hover:border-amber-500/40 transition-all">
+            <span class="text-[11px] font-mono text-amber-400 font-extrabold tracking-wider px-3 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">STEP 01</span>
+            <div class="text-lg font-extrabold text-white tracking-normal my-1">看見問題</div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">盤點現有能力限制</p>
+          </div>
+          <div class="glass-card p-6 rounded-2xl border-slate-800 text-center flex flex-col items-center justify-between space-y-3 relative group hover:border-amber-500/40 transition-all">
+            <span class="text-[11px] font-mono text-amber-400 font-extrabold tracking-wider px-3 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">STEP 02</span>
+            <div class="text-lg font-extrabold text-white tracking-normal my-1">找到可能</div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">重組既有核心資源</p>
+          </div>
+          <div class="glass-card p-6 rounded-2xl border-slate-800 text-center flex flex-col items-center justify-between space-y-3 relative group hover:border-amber-500/40 transition-all">
+            <span class="text-[11px] font-mono text-amber-400 font-extrabold tracking-wider px-3 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">STEP 03</span>
+            <div class="text-lg font-extrabold text-white tracking-normal my-1">設計方案</div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">產品/商業模式架構</p>
+          </div>
+          <div class="glass-card p-6 rounded-2xl border-slate-800 text-center flex flex-col items-center justify-between space-y-3 relative group hover:border-amber-500/40 transition-all">
+            <span class="text-[11px] font-mono text-amber-400 font-extrabold tracking-wider px-3 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">STEP 04</span>
+            <div class="text-lg font-extrabold text-white tracking-normal my-1">找到市場／資源</div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">通路/生態圈/補助</p>
+          </div>
+          <div class="glass-card p-6 rounded-2xl border-slate-800 text-center flex flex-col items-center justify-between space-y-3 relative group hover:border-amber-500/40 transition-all">
+            <span class="text-[11px] font-mono text-amber-400 font-extrabold tracking-wider px-3 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">STEP 05</span>
+            <div class="text-lg font-extrabold text-white tracking-normal my-1">開始驗證</div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">小步快跑，實戰反饋</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Pain Point Selector -->
+      <div id="pain-points-selector" class="grid lg:grid-cols-12 gap-6 sm:gap-8 items-start scroll-mt-28">
+        <div class="lg:col-span-5 space-y-3">
+          <h3 class="text-sm font-semibold text-slate-200 flex items-center gap-2 mb-2">
+            <i data-lucide="help-circle" class="w-4 h-4 text-amber-400"></i>
+            點擊切換貴公司目前的營運痛點：
+          </h3>
+
+          <div class="space-y-3" id="pain-points-list">
+            <button onclick="selectPainPoint(0)" id="pain-btn-0" class="pain-point-btn w-full text-left p-4 sm:p-5 rounded-xl glass-card transition-all border border-amber-500/50 bg-slate-800 text-white flex items-center justify-between group active:scale-[0.99]">
+              <div class="flex items-center gap-3.5">
+                <div class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-bold flex items-center justify-center text-sm shrink-0">1</div>
+                <span class="font-medium text-xs sm:text-sm leading-snug">想做新產品，卻不知道市場買不買單。</span>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-amber-400 group-hover:translate-x-1 transition-transform shrink-0 ml-2"></i>
+            </button>
+
+            <button onclick="selectPainPoint(1)" id="pain-btn-1" class="pain-point-btn w-full text-left p-4 sm:p-5 rounded-xl glass-card hover:bg-slate-800/80 transition-all border border-slate-800 text-slate-200 flex items-center justify-between group active:scale-[0.99]">
+              <div class="flex items-center gap-3.5">
+                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 font-bold text-sm shrink-0">2</div>
+                <span class="font-medium text-xs sm:text-sm leading-snug">有資源，卻不知道怎麼重新組合。</span>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:translate-x-1 transition-transform shrink-0 ml-2"></i>
+            </button>
+
+            <button onclick="selectPainPoint(2)" id="pain-btn-2" class="pain-point-btn w-full text-left p-4 sm:p-5 rounded-xl glass-card hover:bg-slate-800/80 transition-all border border-slate-800 text-slate-200 flex items-center justify-between group active:scale-[0.99]">
+              <div class="flex items-center gap-3.5">
+                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 font-bold text-sm shrink-0">3</div>
+                <span class="font-medium text-xs sm:text-sm leading-snug">想進政府市場，卻不知道從哪一案開始。</span>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:translate-x-1 transition-transform shrink-0 ml-2"></i>
+            </button>
+
+            <button onclick="selectPainPoint(3)" id="pain-btn-3" class="pain-point-btn w-full text-left p-4 sm:p-5 rounded-xl glass-card hover:bg-slate-800/80 transition-all border border-slate-800 text-slate-200 flex items-center justify-between group active:scale-[0.99]">
+              <div class="flex items-center gap-3.5">
+                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 font-bold text-sm shrink-0">4</div>
+                <span class="font-medium text-xs sm:text-sm leading-snug">有想法，卻缺少資源把它做出來。</span>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:translate-x-1 transition-transform shrink-0 ml-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pain Point Resolution Card -->
+        <div class="lg:col-span-7 flex flex-col">
+          <div id="pain-solution-card" class="glass-card rounded-2xl p-6 sm:p-8 border-amber-500/40 bg-gradient-to-br from-brand-800/90 to-brand-900/95 relative shadow-xl h-full flex flex-col justify-between transition-all">
+            <div>
+              <div class="inline-block px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold mb-4 border border-amber-500/30" id="solution-tag">
+                針對痛點 01 曜昕解法
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-3" id="solution-title">
+                產品設計 × MVP 最小可行性測試
+              </h3>
+              <p class="text-slate-300 leading-relaxed text-sm sm:text-base mb-6 font-normal" id="solution-desc">
+                不急著大舉投入量產！曜昕會協助從產品定位、規格與銷售情境下手，重新梳理現有資源，設計出一個可快速測試的 MVP 版本，先取得真實市場買單的數據驗證。
+              </p>
+              <div class="bg-slate-950 p-4 sm:p-5 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-200 space-y-2.5">
+                <div class="font-bold text-amber-400 flex items-center gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 shrink-0"></i>
+                  <span>曜昕切入步驟與落地執行：</span>
+                </div>
+                <div id="solution-steps" class="space-y-2 text-slate-300 pl-2 leading-relaxed">
+                  <p>• 重新審視產品定位與潛在客戶真實需求</p>
+                  <p>• 打磨第二產品曲線，規劃清晰銷售情境</p>
+                  <p>• 以低成本展示案例進行市場驗證與調整</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <span class="text-xs text-slate-400 font-medium">先做對一件事，再談下一步。</span>
+              <button onclick="prefillFormForPainPoint()" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 active:scale-95 text-slate-950 font-bold px-6 py-3 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 transition-all min-h-[44px]">
+                <span>預約討論</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
