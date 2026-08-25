@@ -257,9 +257,9 @@
    
       // 2. 取得要插入內容的 <main> 容器
       const mainContent = document.getElementById('main-content');
-      alert(event.target.id);
-       // Get the ID from the clicked element
-      const pageUrl = '';
+      
+      // Get the ID from the clicked element
+      let  pageUrl = '';
       if (typeof event.target.id !== 'undefined')  {
         pageUrl=event.target.id;
         alert(pageUrl.replace('load-',''));
@@ -283,8 +283,7 @@
         });
 
       }else {
-         console.error('發生錯誤:找不到pageUrl');
-         alert(event.target.id);
+         console.error('發生錯誤:找不到pageUrl',event.target.id);
       } 
 
      
