@@ -1,0 +1,72 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#061322]/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300" id="navbar">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3.5 group active:scale-95 transition-transform">
+      <div class="w-[50px] h-[50px] min-w-[50px] min-h-[50px] flex items-center justify-center relative overflow-hidden rounded-full p-0.5 bg-slate-900 border border-amber-500/40 group-hover:border-amber-500/80 transition-colors">
+        <svg class="w-[50px] h-[50px]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px;">
+          <path d="M 68 12 C 38 12, 16 32, 16 54 C 16 57, 19 63, 25 69 C 21 58, 25 36, 48 24 C 58 18, 68 16, 76 16 C 73 13, 70 12, 68 12 Z" fill="url(#navOrangeGrad)"/>
+          <path d="M 32 88 C 62 88, 84 68, 84 46 C 84 43, 81 37, 75 31 C 79 42, 75 64, 52 76 C 42 82, 32 84, 24 84 C 27 87, 30 88, 32 88 Z" fill="url(#navNavyGrad)"/>
+          <path d="M 50 28 Q 50 50 72 50 Q 50 50 50 72 Q 50 50 28 50 Q 50 50 50 28 Z" fill="url(#navStarGrad)"/>
+          <circle cx="50" cy="50" r="3.5" fill="#FFFFFF" opacity="0.95"/>
+          <defs>
+            <linearGradient id="navOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFB703" />
+              <stop offset="50%" stop-color="#F59E0B" />
+              <stop offset="100%" stop-color="#EA580C" />
+            </linearGradient>
+            <linearGradient id="navNavyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#254B8C" />
+              <stop offset="50%" stop-color="#0B2341" />
+              <stop offset="100%" stop-color="#040D18" />
+            </linearGradient>
+            <linearGradient id="navStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFFBEB" />
+              <stop offset="45%" stop-color="#FDE047" />
+              <stop offset="100%" stop-color="#F59E0B" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div>
+        <span class="text-base sm:text-lg font-bold tracking-normal text-white block leading-snug">曜昕企管顧問</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-slate-200" id="desktop-nav">
+      <a href="#section-01" class="nav-link hover:text-amber-400 transition-colors py-1">核心理念</a>
+      <a href="#section-02" class="nav-link hover:text-amber-400 transition-colors py-1">切入策略</a>
+      <a href="#section-03" class="nav-link hover:text-amber-400 transition-colors py-1">服務項目</a>
+      <a href="#section-04" class="nav-link hover:text-amber-400 transition-colors py-1">怎麼開始</a>
+      <a href="#section-05" class="nav-link hover:text-amber-400 transition-colors py-1">實戰經驗</a>
+      <a href="#section-06" class="nav-link hover:text-amber-400 transition-colors py-1">團隊專長</a>
+      <a href="#section-07" class="nav-link hover:text-amber-400 transition-colors py-1">合作回饋</a>
+      <a href="#section-faq" class="nav-link hover:text-amber-400 transition-colors py-1">常見問題</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#section-08" class="bg-amber-500 hover:bg-amber-600 active:scale-95 text-slate-950 font-bold px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all flex items-center gap-2 group min-h-[44px]">
+        <span>與曜昕聊聊</span>
+        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+      </a>
+      <button id="mobile-menu-btn" aria-label="切換導覽選單" class="md:hidden p-2.5 text-slate-200 hover:text-white focus:outline-none rounded-xl bg-slate-800 border border-slate-700 active:scale-95 transition-all">
+        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#061322] border-t border-slate-800 px-6 py-6 space-y-3">
+    <a href="#section-01" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">01｜核心理念</a>
+    <a href="#section-02" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">02｜切入策略與痛點檢測</a>
+    <a href="#section-03" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">03｜服務項目</a>
+    <a href="#section-04" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">04｜怎麼開始</a>
+    <a href="#section-05" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">05｜實戰經驗</a>
+    <a href="#section-06" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">06｜團隊專長</a>
+    <a href="#section-07" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">07｜合作回饋</a>
+    <a href="#section-faq" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">FAQ｜常見問題 (20題)</a>
+    <a href="#section-08" class="mobile-nav-link block text-amber-400 font-bold py-3.5 px-3 flex items-center justify-between active:bg-amber-500/10 rounded-xl">
+      <span>預約免費諮詢單</span>
+      <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+    </a>
+  </div>
+</header>
