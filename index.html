@@ -231,8 +231,11 @@
         event.preventDefault(); 
   
        // Get the ID from the clicked element
-       let pagename = event.target.dataset.id.replace('load-','');
+       let pagename = event.target.dataset.id;
+        alert(pagename);
+        alert(pagename.replace('load-',''));
        alert(`${pagename}.html`);
+     
      
      
       // 2. 取得要插入內容的 <main> 容器
