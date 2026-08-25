@@ -227,7 +227,10 @@
 
     //動態按鈕換頁
     function loadmain(event) {
-      alert(event.id);
+      // Get the ID from the clicked element
+      const eventId = event.target.dataset.id.replace('load-',''); 
+      alert(`${eventId}.html');
+     
       // 1. 阻止按鈕的預設換頁行為
       event.preventDefault(); 
     
