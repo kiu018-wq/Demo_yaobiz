@@ -33,14 +33,14 @@
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-slate-200" id="desktop-nav">
-        <a href="index.html"  id="load-index" onclick="loadmain(event)" class="nav-link hover:text-amber-400 transition-colors py-1">核心理念</a>
-        <a href="strategy.html" id="load-strategy" onclick="loadmain(event)" class="nav-link hover:text-amber-400 transition-colors py-1">切入策略</a>
-        <a href="services.html" id="load-services" onclick="loadmain(event)" class="nav-link hover:text-amber-400 transition-colors py-1">服務項目</a>
-        <a href="begin.html"  id="load-begin" onclick="loadmain(event)" class="nav-link hover:text-amber-400 transition-colors py-1">怎麼開始</a>
-        <a href="experience.html" id="load-experience" onclick="loadmain(event)" class="nav-link hover:text-amber-400 transition-colors py-1">實戰經驗</a>
-        <a href="specialty.html" id="load-specialty" onclick="loadmain(event)" class="nav-link hover:text-amber-400 transition-colors py-1">團隊專長</a>
-        <a href="feedback.html" id="load-feedback" onclick="loadmain(event)" class="nav-link hover:text-amber-400 transition-colors py-1">合作回饋</a>
-        <a href="faq.html" id="load-faq" onclick="loadmain(event)" class="nav-link hover:text-amber-400 transition-colors py-1">常見問題</a>
+        <a href="index.html"  id="load-index" onclick="loadmain(this)" class="nav-link hover:text-amber-400 transition-colors py-1">核心理念</a>
+        <a href="strategy.html" id="load-strategy" onclick="loadmain(this)" class="nav-link hover:text-amber-400 transition-colors py-1">切入策略</a>
+        <a href="services.html" id="load-services" onclick="loadmain(this)" class="nav-link hover:text-amber-400 transition-colors py-1">服務項目</a>
+        <a href="begin.html"  id="load-begin" onclick="loadmain(this)" this="nav-link hover:text-amber-400 transition-colors py-1">怎麼開始</a>
+        <a href="experience.html" id="load-experience" onclick="loadmain(this)" class="nav-link hover:text-amber-400 transition-colors py-1">實戰經驗</a>
+        <a href="specialty.html" id="load-specialty" onclick="loadmain(this)" class="nav-link hover:text-amber-400 transition-colors py-1">團隊專長</a>
+        <a href="feedback.html" id="load-feedback" onclick="loadmain(this)" class="nav-link hover:text-amber-400 transition-colors py-1">合作回饋</a>
+        <a href="faq.html" id="load-faq" onclick="loadmain(this)" class="nav-link hover:text-amber-400 transition-colors py-1">常見問題</a>
       </nav>
 
       <div class="flex items-center gap-3">
@@ -58,7 +58,7 @@
     <div id="mobile-menu" class="hidden md:hidden bg-[#061322] border-t border-slate-800 px-6 py-6 space-y-3">
       <a href="index.html"  class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">01｜核心理念</a>
       <a href="strategy.html" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">02｜切入策略與痛點檢測</a>
-      <a href="services.html" id="load-services-mobile" onclick="loadmain(event)" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">03｜服務項目</a>
+      <a href="services.html" id="load-services-mobile" onclick="loadmain(this)" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">03｜服務項目</a>
       <a href="begin.html" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">04｜怎麼開始</a>
       <a href="experience.html" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">05｜實戰經驗</a>
       <a href="specialty.html" class="mobile-nav-link block text-slate-200 font-medium py-2.5 hover:text-amber-400 border-b border-slate-800">06｜團隊專長</a>
