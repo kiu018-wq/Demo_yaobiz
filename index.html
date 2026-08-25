@@ -167,9 +167,6 @@
     <i data-lucide="arrow-up" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
   </button>
 
-  <!-- 動態載入 Footer -->
-  <div id="footer-container"></div>
-
   <!-- Toast Notification Container -->
   <div id="toast-modal" class="fixed bottom-6 right-6 z-50 hidden">
     <div class="glass-card border border-emerald-500/50 bg-slate-900 text-slate-100 px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 toast-anim">
@@ -181,6 +178,10 @@
     </div>
   </div>
 
+  <!-- 動態載入 Footer -->
+  <div id="footer-container"></div>
+
+  
   <!-- JavaScript 邏輯 (包含組件載入與事件處理) -->
   <script>
     // 載入外部 HTML 元件 (header & footer)
@@ -262,7 +263,7 @@
       // Get the ID from the clicked element
       let  pageUrl = '';
       if (typeof event.target.id !== 'undefined')  {
-        console.log('targetId:',event.target.id);
+
         pageUrl=event.target.id.replace('load-','');
         console.log('pageUrl:',pageUrl);
         
