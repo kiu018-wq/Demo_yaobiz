@@ -185,6 +185,8 @@
 
   <!-- JavaScript 邏輯 (包含組件載入與事件處理) -->
   <script>
+    let currentApiEndpoint = "https://script.google.com/macros/s/AKfycbzRG1gJ2TL5zOF9SRhvwV6jHSTFavW3KAVRrnr2_vlsBbT7oaze699mq2pcZricC-2lEQ/exec";
+
     // 載入外部 HTML 元件 (header & footer)
     async function loadComponents() {
       try {
@@ -486,17 +488,15 @@
         desc: document.getElementById('project_desc')?.value || '',
         submittedAt: new Date().toISOString()
       };
-      console.log("發送1");
+      
       try {
         await fetch(currentApiEndpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(payload)
         });
-        console.log("發送2");
-      
+       
         btn.classList.add('hidden');
-        console.log("發送3");
         if (successMsg) successMsg.classList.remove('hidden');
         showToast('諮詢表單已成功送出！', 'success');
       } catch (err) {
