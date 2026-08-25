@@ -261,12 +261,11 @@
       // 2. 取得要插入內容的 <main> 容器
       const mainContent = document.getElementById('main-content');
 
-      console.log('targetId:', typeof event.target.id );
+      console.log('targetId:', event.target.id );
        
       // Get the ID from the clicked element
-       if (typeof event.target.id !== 'undefined' &&  event.target.id !== null )  {
-         let  pageUrl = event.target.id.replace('load-','');
-        // console.log('pageUrl:',pageUrl);
+       if (typeof event.target.id !== 'undefined' && typeof event.target.id !== '' )  {
+        let  pageUrl = event.target.id.replace('load-','');
         
         // 3. 使用 Fetch API 非同步讀取同資料夾底下的 services.html
         fetch(`${pageUrl}.html`)
