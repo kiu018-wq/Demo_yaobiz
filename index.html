@@ -260,8 +260,8 @@
 
        // Get the ID from the clicked element
       const pageUrl = '';
-      if (typeof event.target.dataset.id !== 'undefined')  {
-        pageUrl=event.target.dataset.id;
+      if (typeof event.target.id !== 'undefined')  {
+        pageUrl=event.target.id;
         alert(pageUrl.replace('load-',''));
         alert(`${pageUrl}.html`);
 
