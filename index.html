@@ -471,6 +471,7 @@
         if (phoneInput) phoneInput.focus();
         return;
       }
+      console.log("發送0");
 
       btn.disabled = true;
       btn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> 送出中...`;
@@ -485,16 +486,17 @@
         desc: document.getElementById('project_desc')?.value || '',
         submittedAt: new Date().toISOString()
       };
-
+      console.log("發送1");
       try {
         await fetch(currentApiEndpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(payload)
         });
-
+        console.log("發送2");
+      
         btn.classList.add('hidden');
-        console.log("發送送出:");
+        console.log("發送3");
         if (successMsg) successMsg.classList.remove('hidden');
         showToast('諮詢表單已成功送出！', 'success');
       } catch (err) {
