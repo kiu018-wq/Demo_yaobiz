@@ -257,7 +257,7 @@
    
       // 2. 取得要插入內容的 <main> 容器
       const mainContent = document.getElementById('main-content');
-
+      alert(event.target.id);
        // Get the ID from the clicked element
       const pageUrl = '';
       if (typeof event.target.id !== 'undefined')  {
@@ -284,7 +284,7 @@
 
       }else {
          console.error('發生錯誤:找不到pageUrl');
-         alert(event.target.dataset.id);
+         alert(event.target.id);
       } 
 
      
