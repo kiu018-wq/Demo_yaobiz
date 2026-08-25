@@ -255,16 +255,16 @@
       // 1. 阻止按鈕的預設換頁行為
       event.preventDefault(); 
    
-      // Get the ID from the clicked element
-      alert(event.target.dataset.id);
-     
-      const pgname = event.target.dataset.id;
-      alert(pgname.replace('load-',''));
-      alert(`${pagename}.html`);
-
-     
       // 2. 取得要插入內容的 <main> 容器
       const mainContent = document.getElementById('main-content');
+
+       // Get the ID from the clicked element
+      const pageUrl = '';
+      if (typeof event.target.dataset.id !== 'undefined')  {
+        pageUrl=event.target.dataset.id;
+        alert(pgname.replace('load-',''));
+        alert(`${pagename}.html`);
+      }else  alert(event.target.dataset.id);
       
       // 3. 使用 Fetch API 非同步讀取同資料夾底下的 services.html
       fetch(`${pgname}.html`)
