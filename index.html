@@ -11,7 +11,7 @@
   <meta name="author" content="曜昕企業管理顧問有限公司 YAO HSIN BUSINESS MANAGEMENT CONSULTING CO., LTD.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#061322">
-  <!-- <link rel="canonical" href="https://yaobiz.net/"> -->
+  <link rel="canonical" href="https://yaobiz.net/">
 
   <!-- Open Graph 社群標籤 -->
   <meta property="og:locale" content="zh_TW">
@@ -261,10 +261,10 @@
       // 2. 取得要插入內容的 <main> 容器
       const mainContent = document.getElementById('main-content');
 
-      console.log('targetId:',event.target.id );
+      console.log('targetId:', typeof event.target.id );
        
       // Get the ID from the clicked element
-       if (typeof event.target.id !== 'undefined' && typeof event.target.id !== '' )  {
+       if (typeof event.target.id !== 'undefined' &&  event.target.id !== null )  {
          let  pageUrl = event.target.id.replace('load-','');
         // console.log('pageUrl:',pageUrl);
         
