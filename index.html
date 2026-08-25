@@ -398,32 +398,36 @@
       document.getElementById('consult-form').reset();
     }
 
-//動態按鈕換頁
-document.getElementById('load-services').addEventListener('click', function(event) {
-    // 1. 阻止按鈕的預設換頁行為
-    event.preventDefault(); 
-    
-    // 2. 取得要插入內容的 <main> 容器
-    const mainContent = document.getElementById('main-content');
+  //動態按鈕換頁
+  document.getElementById('load-services').addEventListener('click', function(event) {
+      alert('services');
 
-    const baseUrl = '';  
-    // 3. 使用 Fetch API 非同步讀取同資料夾底下的 services.html
-    fetch(`${baseUrl}services.html`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('網頁載入失敗');
-            }
-            return response.text(); // 將檔案內容轉為文字
-        })
-        .then(htmlData => {
-            // 4. 將讀取到的 HTML 內容塞進 <main> 標籤中
-            mainContent.innerHTML = htmlData;
-        })
-        .catch(error => {
-            console.error('發生錯誤:', error);
-            mainContent.innerHTML = '<p>內容載入失敗，請稍後再試。</p>';
-        });
-});
+      // 1. 阻止按鈕的預設換頁行為
+      event.preventDefault(); 
+
+      alert(event.id);
+
+      // 2. 取得要插入內容的 <main> 容器
+      const mainContent = document.getElementById('main-content');
+
+      const baseUrl = '';  
+      // 3. 使用 Fetch API 非同步讀取同資料夾底下的 services.html
+      fetch(`${baseUrl}services.html`)
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('網頁載入失敗');
+              }
+              return response.text(); // 將檔案內容轉為文字
+          })
+          .then(htmlData => {
+              // 4. 將讀取到的 HTML 內容塞進 <main> 標籤中
+              mainContent.innerHTML = htmlData;
+          })
+          .catch(error => {
+              console.error('發生錯誤:', error);
+              mainContent.innerHTML = '<p>內容載入失敗，請稍後再試。</p>';
+          });
+  });
   </script>
  
 
