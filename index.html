@@ -265,7 +265,7 @@
       let  pageUrl = '';
       if (typeof event.target.id !== 'undefined')  {
         pageUrl=event.target.id.replace('load-','');
-        console.log('pageUrl:',pageUrl);
+        //console.log('pageUrl:',pageUrl);
         
         // 3. 使用 Fetch API 非同步讀取同資料夾底下的 services.html
         fetch(`${pageUrl}.html`)
