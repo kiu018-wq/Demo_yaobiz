@@ -473,8 +473,7 @@
         if (phoneInput) phoneInput.focus();
         return;
       }
-      console.log("發送0");
-
+      
       btn.disabled = true;
       btn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> 送出中...`;
       if (window.lucide) lucide.createIcons();
