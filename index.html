@@ -421,22 +421,109 @@
         if (icon) icon.style.transform = 'rotate(0deg)';
       }
     }
+    // 監聽滾動事件控制「回到首頁/頁頂」懸浮按鈕顯示與隱藏
+    window.addEventListener('scroll', () => {
+      const topBtn = document.getElementById('back-to-top-btn');
+      if (!topBtn) return;
+
+      if (window.scrollY > 350) {
+        topBtn.classList.remove('opacity-0', 'pointer-events-none');
+        topBtn.classList.add('opacity-100', 'pointer-events-auto');
+      } else {
+        topBtn.classList.remove('opacity-100', 'pointer-events-auto');
+        topBtn.classList.add('opacity-0', 'pointer-events-none');
+      }
+    });
 
     // 表單送出處理
-    function handleFormSubmit(e) {
-      e.preventDefault();
+   
+    //  function handleFormSubmit(e) {
+     //  e.preventDefault();
       
-      const toast = document.getElementById('toast-modal');
-      if (toast) {
-        toast.classList.remove('hidden');
-        setTimeout(() => {
-          toast.classList.add('hidden');
-        }, 5000);
+     //  const toast = document.getElementById('toast-modal');
+     //  if (toast) {
+       //  toast.classList.remove('hidden');
+       // setTimeout(() => {
+       //  toast.classList.add('hidden');
+      //  }, 5000);
+     // }
+
+    //  document.getElementById('consult-form').reset();
+   // }
+    
+
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('form-submit-btn');
+      const successMsg = document.getElementById('form-success-msg');
+      const phoneInput = document.getElementById('contact_phone');
+
+      if (!btn) return;
+
+      const rawPhone = phoneInput?.value || '';
+      const cleanedPhone = rawPhone.replace(/[\s\-\(\)]/g, '');
+      const taiwanPhoneRegex = /^(09\d{8}|0\d{8,9})$/;
+
+      if (!taiwanPhoneRegex.test(cleanedPhone)) {
+        showToast('請輸入有效的台灣聯絡電話（例：0912-345-678 或 02-2345-6789）', 'warning');
+        if (phoneInput) phoneInput.focus();
+        return;
       }
 
-      document.getElementById('consult-form').reset();
-    }
+      btn.disabled = true;
+      btn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> 送出中...`;
+      if (window.lucide) lucide.createIcons();
 
+      const payload = {
+        company: document.getElementById('company_name')?.value || '',
+        name: document.getElementById('contact_name')?.value || '',
+        phone: document.getElementById('contact_phone')?.value || '',
+        email: document.getElementById('contact_email')?.value || '',
+        service: document.getElementById('service_type')?.value || '',
+        desc: document.getElementById('project_desc')?.value || '',
+        submittedAt: new Date().toISOString()
+      };
+
+      try {
+        await fetch(currentApiEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+
+        btn.classList.add('hidden');
+        if (successMsg) successMsg.classList.remove('hidden');
+        showToast('諮詢表單已成功送出！', 'success');
+      } catch (err) {
+        console.error("發送失敗:", err);
+        btn.classList.add('hidden');
+        if (successMsg) successMsg.classList.remove('hidden');
+      }
+    }
+    function showToast(message, type = 'warning') {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+
+      const toast = document.createElement('div');
+      toast.className = `toast-anim pointer-events-auto p-4 rounded-xl border shadow-xl flex items-center justify-between gap-3 text-xs sm:text-sm font-semibold ${
+        type === 'warning' ? 'bg-amber-950 border-amber-500/50 text-amber-200' : 'bg-emerald-950 border-emerald-500/50 text-emerald-200'
+      }`;
+      
+      toast.innerHTML = `
+        <div class="flex items-center gap-2">
+          <i data-lucide="${type === 'warning' ? 'alert-circle' : 'check-circle-2'}" class="w-5 h-5 shrink-0"></i>
+          <span>${message}</span>
+        </div>
+        <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-white p-1">✕</button>
+      `;
+
+      container.appendChild(toast);
+      if (window.lucide) lucide.createIcons();
+
+      setTimeout(() => {
+        if (toast.parentElement) toast.remove();
+      }, 4000);
+    }
   </script>
 
 </body>
