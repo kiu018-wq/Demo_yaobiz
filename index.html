@@ -183,47 +183,47 @@
   <!-- JavaScript 邏輯 (包含組件載入與事件處理) -->
   <script>
     // 載入外部 HTML 元件 (header & footer)
-   async function loadComponents() {
-    try {
-      // 解決伺服器端渲染(SSR)或特定環境找不到網域的問題，如果是純前端本地開發，可保持相對路徑
-      // 如果在 Node/SSR 環境，請確保補上完整網址，例如：const baseUrl = 'http://localhost:3000/';
-      const baseUrl = ''; 
+    async function loadComponents() {
+      try {
+        // 解決伺服器端渲染(SSR)或特定環境找不到網域的問題，如果是純前端本地開發，可保持相對路徑
+        // 如果在 Node/SSR 環境，請確保補上完整網址，例如：const baseUrl = 'http://localhost:3000/';
+        const baseUrl = ''; 
 
-      // 1. 修正 footer.html 變成 footer.html
-      const [headerRes, footerRes] = await Promise.all([
-        fetch(`${baseUrl}header.html`),
-        fetch(`${baseUrl}footer.html`) 
-      ]);
+        // 1. 修正 footer.html 變成 footer.html
+        const [headerRes, footerRes] = await Promise.all([
+          fetch(`${baseUrl}header.html`),
+          fetch(`${baseUrl}footer.html`) 
+        ]);
 
-      // 2. 處理 Header 載入
-      if (headerRes.ok) {
-        document.getElementById('header-container').innerHTML = await headerRes.text();
-      } else {
-        // 修正：將 response 改為 headerRes，並移除未定義的 filePath
-        document.getElementById('header-container').innerHTML = 
-          `<div style="color: red; padding: 10px; text-align: center;">頁首元件載入失敗 (HTTP ${headerRes.status})</div>`;
-        throw new Error(`HTTP 錯誤！header 狀態碼: ${headerRes.status}`);
+        // 2. 處理 Header 載入
+        if (headerRes.ok) {
+          document.getElementById('header-container').innerHTML = await headerRes.text();
+        } else {
+          // 修正：將 response 改為 headerRes，並移除未定義的 filePath
+          document.getElementById('header-container').innerHTML = 
+            `<div style="color: red; padding: 10px; text-align: center;">頁首元件載入失敗 (HTTP ${headerRes.status})</div>`;
+          throw new Error(`HTTP 錯誤！header 狀態碼: ${headerRes.status}`);
+        }
+
+        // 3. 處理 Footer 載入
+        if (footerRes.ok) {
+          document.getElementById('footer-container').innerHTML = await footerRes.text();
+        } else {
+          // 修正：原本誤寫成 header-container，改回 footer-container
+          document.getElementById('footer-container').innerHTML = 
+            `<div style="color: red; padding: 10px; text-align: center;">頁尾元件載入失敗 (HTTP ${footerRes.status})</div>`;
+          throw new Error(`HTTP 錯誤！footer 狀態碼: ${footerRes.status}`);
+        }
+
+        // 元件載入後重新初始化 Lucide 圖示與選單觸發事件
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        if (typeof initMobileMenu === 'function') initMobileMenu();
+
+      } catch (err) {
+        // 建議將註解打開，這樣有其他錯誤時主控台才看得到提示
+        console.error('載入頁首頁尾時發生錯誤:', err);
       }
-
-      // 3. 處理 Footer 載入
-      if (footerRes.ok) {
-        document.getElementById('footer-container').innerHTML = await footerRes.text();
-      } else {
-        // 修正：原本誤寫成 header-container，改回 footer-container
-        document.getElementById('footer-container').innerHTML = 
-          `<div style="color: red; padding: 10px; text-align: center;">頁尾元件載入失敗 (HTTP ${footerRes.status})</div>`;
-        throw new Error(`HTTP 錯誤！footer 狀態碼: ${footerRes.status}`);
-      }
-
-      // 元件載入後重新初始化 Lucide 圖示與選單觸發事件
-      if (typeof lucide !== 'undefined') lucide.createIcons();
-      if (typeof initMobileMenu === 'function') initMobileMenu();
-
-    } catch (err) {
-      // 建議將註解打開，這樣有其他錯誤時主控台才看得到提示
-      console.error('載入頁首頁尾時發生錯誤:', err);
     }
-  }
 
 
     // 初始化手機版導覽選單事件
@@ -397,17 +397,18 @@
 
       document.getElementById('consult-form').reset();
     }
-  </script>
-  <script>
-  document.getElementById('load-services').addEventListener('click', function(event) {
+
+//動態按鈕換頁
+document.getElementById('load-services').addEventListener('click', function(event) {
     // 1. 阻止按鈕的預設換頁行為
     event.preventDefault(); 
     
     // 2. 取得要插入內容的 <main> 容器
     const mainContent = document.getElementById('main-content');
-    
+
+    const baseUrl = '';  
     // 3. 使用 Fetch API 非同步讀取同資料夾底下的 services.html
-    fetch('services.html')
+    fetch(`${baseUrl}services.html`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('網頁載入失敗');
@@ -423,7 +424,8 @@
             mainContent.innerHTML = '<p>內容載入失敗，請稍後再試。</p>';
         });
 });
-</script>
+  </script>
+ 
 
 </body>
 </html>
